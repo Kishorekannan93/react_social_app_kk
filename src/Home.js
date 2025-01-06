@@ -3,13 +3,11 @@ import Feed from "./Feed"
 import DataContext from "./context/DataContext"
 
 const Home = () => {
-  const {searchresults,fetcherror,isloading}  = useContext(DataContext)
+  const {searchResults}  = useContext(DataContext)
   return (
     <main className="Home">
-      {isloading && <p className="statusMsg">loading Post....</p>}
-      {!isloading && fetcherror && <p className="statusMsg" style={{color:"red"}}>{fetcherror}</p>}
-      {!isloading && !fetcherror && (searchresults.length ?  (
-      <Feed posts={searchresults} />):
+      { (searchResults.length ?  (
+      <Feed posts={searchResults} />):
       (<p style={{marginTop:"2rem"}}>No post to display</p>
       ))
     }

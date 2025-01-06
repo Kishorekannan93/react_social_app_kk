@@ -2,7 +2,7 @@ import React, { useContext } from 'react'
 import DataContext from './context/DataContext'
 
 const Newpost = () => {
-  const {postTitle,setPostTitle,handleSubmit,postBody,setpostBody} = useContext(DataContext)
+  const {postTitle,setPostTitle,handleSubmit,postBody,setPostBody} = useContext(DataContext)
   return (
     <main className="NewPost">
         <h2>New Post</h2>
@@ -21,7 +21,7 @@ const Newpost = () => {
           <textarea name="postBody" id="postBody"
             required
             value={postBody}
-            onChange={(e)=>setpostBody(e.target.value)}
+            onChange={(e)=>setPostBody(e.target.value)}
           ></textarea>
           <button type='submit'>Submit</button>
         </form>
