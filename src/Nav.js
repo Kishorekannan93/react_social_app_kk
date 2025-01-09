@@ -2,7 +2,7 @@ import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
 import DataContext from './context/DataContext'
 const Nav = () => {
-  const {search,setsearch} = useContext(DataContext)
+  const {search,setSearch} = useContext(DataContext)
   return (
     <nav className='Nav'>
       <form className='searchForm' onSubmit={(e)=>e.preventDefault()}>
@@ -14,7 +14,7 @@ const Nav = () => {
           required
           placeholder='Search Post'
           value={search}
-          onChange={(e)=>setsearch(e.target.value)}
+          onChange={(e)=>setSearch(e.target.value)}
 
         />
 
